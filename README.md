@@ -60,7 +60,7 @@ extract_3mf_components_simple(
 1. **Extract 3MF Archive**: The script unzips the 3MF file to a temporary directory
 2. **Parse XML**: Reads the `3D/3dmodel.model` XML file from the extracted contents
 3. **Extract Components**: For each mesh object found:
-   - Extracts vertex coordinates (x, y, z)
+   - Extracts vertex coordinates (x, y, z, r, g, b)
    - Extracts triangle face definitions (vertex indices)
    - Saves as an individual OBJ file
 4. **Clean Up**: Removes temporary extraction directory
@@ -93,7 +93,7 @@ The script includes basic error handling:
 - Only extracts mesh geometry (vertices and faces)
 - Does not preserve:
   - Materials
-  - Colors
+  - Per-Face Colors
   - Textures
   - Transforms
   - Other 3MF-specific metadata
